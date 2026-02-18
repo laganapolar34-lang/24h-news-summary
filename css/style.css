@@ -27,75 +27,96 @@ body {
 /* Header */
 header {
     background: var(--bg);
-    padding: 48px 0 32px;
+    padding: 32px 20px 24px;
     text-align: center;
     border-bottom: 1px solid var(--border);
 }
 
 header h1 {
-    font-size: 56px;
+    font-size: 48px;
     font-weight: 700;
     letter-spacing: -0.02em;
     margin-bottom: 8px;
 }
 
 header .date {
-    font-size: 21px;
+    font-size: 19px;
     color: var(--text-secondary);
     font-weight: 400;
+}
+
+/* Date Selector */
+.date-selector {
+    margin-top: 20px;
+}
+
+.date-selector input {
+    padding: 10px 16px;
+    font-size: 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg);
+    color: var(--text-primary);
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 /* Main */
 main {
     max-width: 980px;
     margin: 0 auto;
-    padding: 48px 20px;
+    padding: 40px 20px;
 }
 
 /* Section */
 .news-section {
-    margin-bottom: 64px;
+    margin-bottom: 56px;
 }
 
 .section-title {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 600;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
 .section-title .icon {
-    font-size: 28px;
+    font-size: 24px;
 }
 
 /* Gold Section */
 .gold-section {
     background: var(--bg-alt);
-    padding: 40px;
+    padding: 24px;
     border-radius: 20px;
-    margin-bottom: 48px;
+    margin-bottom: 40px;
+    overflow: hidden;
 }
 
 .gold-section .section-title {
     text-align: center;
     justify-content: center;
-    margin-bottom: 32px;
+    margin-bottom: 20px;
 }
 
 .gold-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
+    gap: 12px;
 }
 
 .gold-card {
     background: var(--bg);
-    padding: 24px;
-    border-radius: 16px;
+    padding: 16px 12px;
+    border-radius: 12px;
     text-align: center;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 80px;
 }
 
 .gold-card.highlight {
@@ -105,16 +126,23 @@ main {
 
 .gold-label {
     display: block;
-    font-size: 14px;
+    font-size: 12px;
     color: var(--text-secondary);
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 }
 
 .gold-price {
     display: block;
-    font-size: 28px;
+    font-size: 22px;
     font-weight: 600;
     color: var(--text-primary);
+}
+
+.gold-change {
+    display: block;
+    font-size: 11px;
+    color: #34c759;
+    margin-top: 2px;
 }
 
 .gold-card.highlight .gold-price {
@@ -125,13 +153,13 @@ main {
 .news-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 20px;
 }
 
 /* News Card */
 .news-card {
     border-top: 1px solid var(--border);
-    padding-top: 20px;
+    padding-top: 16px;
     transition: opacity 0.3s ease;
 }
 
@@ -146,18 +174,18 @@ main {
 }
 
 .news-card h3 {
-    font-size: 19px;
+    font-size: 17px;
     font-weight: 600;
     line-height: 1.4;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     color: var(--text-primary);
 }
 
 .news-card .summary {
-    font-size: 15px;
+    font-size: 14px;
     color: var(--text-secondary);
     line-height: 1.5;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -165,7 +193,7 @@ main {
 }
 
 .news-card .meta {
-    font-size: 13px;
+    font-size: 12px;
     color: var(--text-secondary);
     display: flex;
     justify-content: space-between;
@@ -178,31 +206,86 @@ main {
 /* Footer */
 footer {
     background: var(--bg-alt);
-    padding: 40px 20px;
+    padding: 32px 20px;
     text-align: center;
-    font-size: 14px;
+    font-size: 12px;
     color: var(--text-secondary);
 }
 
-/* Responsive */
+/* Responsive - iPhone */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 40px;
+        font-size: 36px;
     }
     
     header .date {
-        font-size: 17px;
+        font-size: 15px;
     }
     
     .gold-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .gold-card {
+        padding: 12px 8px;
+        min-height: 70px;
+    }
+    
+    .gold-label {
+        font-size: 11px;
+    }
+    
+    .gold-price {
+        font-size: 18px;
+    }
+    
+    .gold-change {
+        font-size: 10px;
     }
     
     .news-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
     }
     
     .section-title {
-        font-size: 24px;
+        font-size: 22px;
+    }
+    
+    .news-card h3 {
+        font-size: 15px;
+    }
+    
+    .news-card .summary {
+        font-size: 13px;
+    }
+    
+    main {
+        padding: 24px 16px;
+    }
+    
+    .gold-section {
+        padding: 16px;
+        margin-bottom: 32px;
+    }
+    
+    .news-section {
+        margin-bottom: 40px;
+    }
+}
+
+/* 更小屏幕 */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 28px;
+    }
+    
+    .gold-section {
+        padding: 12px;
+    }
+    
+    .gold-grid {
+        gap: 8px;
     }
 }

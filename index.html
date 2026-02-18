@@ -12,6 +12,9 @@
             <h1>新闻简报</h1>
             <p class="date" id="currentDate"></p>
         </div>
+        <div class="date-selector">
+            <input type="date" id="datePicker" max="">
+        </div>
     </header>
 
     <main>
@@ -20,57 +23,61 @@
             <h2 class="section-title">黄金价格</h2>
             <div class="gold-grid">
                 <div class="gold-card">
-                    <span class="gold-label">纽约金 (USD/盎司)</span>
-                    <span class="gold-price">$2,035.50</span>
+                    <span class="gold-label">纽约现货 (USD/oz)</span>
+                    <span class="gold-price">$4,935.90</span>
+                    <span class="gold-change">+1.21%</span>
                 </div>
                 <div class="gold-card">
-                    <span class="gold-label">伦敦金 (USD/盎司)</span>
-                    <span class="gold-price">$2,032.80</span>
+                    <span class="gold-label">伦敦现货 (USD/oz)</span>
+                    <span class="gold-price">$4,935.00</span>
+                    <span class="gold-change">+1.18%</span>
                 </div>
                 <div class="gold-card highlight">
-                    <span class="gold-label">人民币/克 (纽约)</span>
-                    <span class="gold-price">¥474.46</span>
+                    <span class="gold-label">人民币/克</span>
+                    <span class="gold-price">¥1,149.50</span>
+                    <span class="gold-change">约 ¥7.24/oz</span>
                 </div>
                 <div class="gold-card highlight">
-                    <span class="gold-label">人民币/克 (伦敦)</span>
-                    <span class="gold-price">¥473.83</span>
+                    <span class="gold-label">美元/人民币</span>
+                    <span class="gold-price">¥7.24</span>
+                    <span class="gold-change">汇率</span>
                 </div>
             </div>
         </section>
 
-        <!-- 政治新闻 -->
+        <!-- 国际政治 -->
         <section class="news-section">
             <h2 class="section-title">
-                <span class="icon">🎯</span>
-                政治
+                <span class="icon">🌍</span>
+                国际政治
             </h2>
             <div class="news-grid">
                 <article class="news-card">
-                    <a href="http://www.xinhuanet.com/politics/" target="_blank">
-                        <h3>习近平主持召开中央全面深化改革委员会会议</h3>
-                        <p class="summary">会议审议通过了多项重要改革方案，强调要坚持以人民为中心的发展思想...</p>
+                    <a href="https://www.reuters.com/" target="_blank">
+                        <h3>特朗普与普京通电话 讨论乌克兰危机</h3>
+                        <p class="summary">美国总统特朗普与俄罗斯总统普京举行通话，就结束乌克兰冲突进行讨论...</p>
                         <div class="meta">
-                            <span class="source">新华网</span>
+                            <span class="source">Reuters</span>
                             <span class="time">今天</span>
                         </div>
                     </a>
                 </article>
                 <article class="news-card">
-                    <a href="http://www.people.com.cn/" target="_blank">
-                        <h3>十四届全国人大二次会议在京闭幕</h3>
-                        <p class="summary">会议圆满完成各项议程，为今年经济社会发展指明方向...</p>
+                    <a href="https://www.bbc.com/" target="_blank">
+                        <h3>欧盟通过对华新关税政策</h3>
+                        <p class="summary">欧盟成员国投票通过对来自中国的进口商品加征额外关税...</p>
                         <div class="meta">
-                            <span class="source">人民网</span>
+                            <span class="source">BBC</span>
                             <span class="time">今天</span>
                         </div>
                     </a>
                 </article>
                 <article class="news-card">
-                    <a href="https://www.mfa.gov.cn/" target="_blank">
-                        <h3>外交部就当前国际热点问题举行新闻发布会</h3>
-                        <p class="summary">发言人就中美关系、中俄关系等热点问题回答记者提问...</p>
+                    <a href="https://www.apnews.com/" target="_blank">
+                        <h3>北约加强东翼军事部署</h3>
+                        <p class="summary">北约宣布将在波兰和波罗的海国家增加军事存在...</p>
                         <div class="meta">
-                            <span class="source">外交部网站</span>
+                            <span class="source">AP News</span>
                             <span class="time">今天</span>
                         </div>
                     </a>
@@ -78,39 +85,39 @@
             </div>
         </section>
 
-        <!-- 财经新闻 -->
+        <!-- 国际财经 -->
         <section class="news-section">
             <h2 class="section-title">
-                <span class="icon">💰</span>
-                财经
+                <span class="icon">📈</span>
+                国际财经
             </h2>
             <div class="news-grid">
                 <article class="news-card">
-                    <a href="http://www.financialnews.com.cn/" target="_blank">
-                        <h3>央行：保持流动性合理充裕</h3>
-                        <p class="summary">中国人民银行发布公告，将继续实施稳健的货币政策...</p>
+                    <a href="https://www.cnbc.com/" target="_blank">
+                        <h3>美联储暗示今年降息两次</h3>
+                        <p class="summary">美联储主席鲍威尔在国会听证会上表示，通胀降温支持降息...</p>
                         <div class="meta">
-                            <span class="source">中国金融新闻网</span>
+                            <span class="source">CNBC</span>
                             <span class="time">今天</span>
                         </div>
                     </a>
                 </article>
                 <article class="news-card">
-                    <a href="http://www.stcn.com/" target="_blank">
-                        <h3>A股三大指数今日走势分化</h3>
-                        <p class="summary">沪指微涨，深成指和创业板指小幅下跌，市场成交额突破万亿元...</p>
+                    <a href="https://www.bloomberg.com/" target="_blank">
+                        <h3>欧洲央行维持利率不变</h3>
+                        <p class="summary">欧洲央行宣布维持三大关键利率不变，符合市场预期...</p>
                         <div class="meta">
-                            <span class="source">证券时报</span>
+                            <span class="source">Bloomberg</span>
                             <span class="time">今天</span>
                         </div>
                     </a>
                 </article>
                 <article class="news-card">
-                    <a href="http://www.stats.gov.cn/" target="_blank">
-                        <h3>统计局发布1-2月经济运行数据</h3>
-                        <p class="summary">国民经济起步平稳，稳中有升，高质量发展取得新成效...</p>
+                    <a href="https://www.wsj.com/" target="_blank">
+                        <h3>美股三大指数创新高</h3>
+                        <p class="summary">科技股带动下，纳斯达克指数首次突破20000点大关...</p>
                         <div class="meta">
-                            <span class="source">国家统计局</span>
+                            <span class="source">WSJ</span>
                             <span class="time">今天</span>
                         </div>
                     </a>
@@ -118,39 +125,39 @@
             </div>
         </section>
 
-        <!-- 军事新闻 -->
+        <!-- 国际军事 -->
         <section class="news-section">
             <h2 class="section-title">
                 <span class="icon">🛡️</span>
-                军事
+                国际军事
             </h2>
             <div class="news-grid">
                 <article class="news-card">
-                    <a href="http://www.mod.gov.cn/" target="_blank">
-                        <h3>国防部：坚决维护国家主权和领土完整</h3>
-                        <p class="summary">发言人就台海局势、南海问题等发表谈话，强调中国军队有信心有能力...</p>
+                    <a href="https://www.defense.gov/" target="_blank">
+                        <h3>美国国防部公布新国防战略</h3>
+                        <p class="summary">五角大楼发布2026年国防战略，重点关注印太地区...</p>
                         <div class="meta">
-                            <span class="source">国防部网站</span>
+                            <span class="source">Defense.gov</span>
                             <span class="time">今天</span>
                         </div>
                     </a>
                 </article>
                 <article class="news-card">
-                    <a href="http://www.81.cn/" target="_blank">
-                        <h3>海军新型驱逐舰完成海试</h3>
-                        <p class="summary">国产新一代导弹驱逐舰顺利完成各项海试项目，即将入列...</p>
+                    <a href="https://www.janes.com/" target="_blank">
+                        <h3>印度成功试射新型导弹</h3>
+                        <p class="summary">印度国防研究与发展组织成功试射可携带核弹头的弹道导弹...</p>
                         <div class="meta">
-                            <span class="source">解放军报</span>
+                            <span class="source">Janes</span>
                             <span class="time">今天</span>
                         </div>
                     </a>
                 </article>
                 <article class="news-card">
-                    <a href="http://www.81.cn/" target="_blank">
-                        <h3>空军举行体系化对抗演练</h3>
-                        <p class="summary">空军多型战机在某海域开展体系化对抗演练，提升实战能力...</p>
+                    <a href="https://www.aljazeera.com/" target="_blank">
+                        <h3>中东局势升级 胡塞武装继续袭击</h3>
+                        <p class="summary">红海局势持续紧张，多国海军加强巡逻...</p>
                         <div class="meta">
-                            <span class="source">中国军网</span>
+                            <span class="source">Al Jazeera</span>
                             <span class="time">今天</span>
                         </div>
                     </a>
@@ -164,10 +171,21 @@
     </footer>
 
     <script>
+        // 设置日期选择器
+        const today = new Date();
+        const dateInput = document.getElementById('datePicker');
+        dateInput.value = today.toISOString().split('T')[0];
+        dateInput.max = today.toISOString().split('T')[0];
+        
         // 显示当前日期
-        const now = new Date();
         const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
-        document.getElementById('currentDate').textContent = now.toLocaleDateString('zh-CN', options);
+        document.getElementById('currentDate').textContent = today.toLocaleDateString('zh-CN', options);
+        
+        // 日期选择变化时提示
+        dateInput.addEventListener('change', function() {
+            alert('历史数据功能开发中，敬请期待！');
+            this.value = today.toISOString().split('T')[0];
+        });
     </script>
 </body>
 </html>
