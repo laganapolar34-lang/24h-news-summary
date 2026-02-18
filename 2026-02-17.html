@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新闻简报</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>新闻简报</h1>
+            <p class="date" id="currentDate">2026年2月17日 星期二</p>
+        </div>
+        <div class="date-selector">
+            <input type="date" id="datePicker" value="2026-02-17" max="2026-02-18">
+        </div>
+    </header>
+
+    <main>
+        <!-- 黄金价格 + 汇率 -->
+        <section class="gold-section">
+            <h2 class="section-title">黄金价格 · 汇率</h2>
+            <div class="gold-grid">
+                <div class="gold-card">
+                    <span class="gold-label">纽约现货 (USD/oz)</span>
+                    <span class="gold-price">$4,877.09</span>
+                    <span class="gold-change">昨日 +$25.80</span>
+                </div>
+                <div class="gold-card">
+                    <span class="gold-label">伦敦现货 (USD/oz)</span>
+                    <span class="gold-price">$4,876.50</span>
+                    <span class="gold-change">昨日 +$24.90</span>
+                </div>
+                <div class="gold-card highlight">
+                    <span class="gold-label">人民币/克</span>
+                    <span class="gold-price">¥1,131.50</span>
+                    <span class="gold-change">$4,877.09 × 6.92 ÷ 31.1</span>
+                </div>
+                <div class="gold-card highlight">
+                    <span class="gold-label">USD/CNY · 100JPY/CNY</span>
+                    <span class="gold-price">¥6.92 · ¥4.48</span>
+                    <span class="gold-change">2月17日</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 国际政治 -->
+        <section class="news-section">
+            <h2 class="section-title">
+                <span class="icon">🌍</span>
+                国际政治
+            </h2>
+            <div class="news-list">
+                <article class="news-item">
+                    <a href="https://www.reuters.com/" target="_blank">
+                        <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&h=500&fit=crop')"></div>
+                        <span class="news-category">Reuters · 今天</span>
+                        <h3>阿曼外交部长会见美国特使维特科夫</h3>
+                        <p class="summary">阿曼外交部长萨伊德·巴德尔·哈米德·阿尔·布萨迪在美国特使史蒂夫·维特科夫和特朗普总统女婿贾里德·库什纳陪同下，在日内瓦举行的美伊间接会谈之前进行了会面。会谈旨在为美国和伊朗之间的间接对话铺平道路，讨论伊朗核问题和地区安全议题。阿曼长期担任海湾地区的外交中间人角色，此次会谈受到国际社会广泛关注。</p>
+                    </a>
+                </article>
+                <article class="news-item">
+                    <a href="https://english.mathrubhumi.com/news/india/india-france-special-strategic-partnership-modi-macron-lwik8unw" target="_blank">
+                        <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1560169897-fc0cdbdfa4d5?w=800&h=500&fit=crop')"></div>
+                        <span class="news-category">Mathrubhumi · 今天</span>
+                        <h3>印度法国建立特殊全球战略伙伴关系</h3>
+                        <p class="summary">印度和法国将双边关系提升为"特殊全球战略伙伴关系"，承诺在国防、贸易和关键矿物领域加强合作。两国领导人表示，此举将"成为全球稳定的 force（力量）"，在地区紧张局势加剧的背景下彰显两国战略合作的重要性。法国将向印度提供更先进的国防技术，包括阵风战斗机和潜艇技术转移。</p>
+                    </a>
+                </article>
+                <article class="news-item">
+                    <a href="https://english.mathrubhumi.com/news/bangladesh/tarique-rahman-prime-minister-sworn-in" target="_blank">
+                        <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1541872703-74c5963631df?w=800&h=500&fit=crop')"></div>
+                        <span class="news-category">Mathrubhumi · 今天</span>
+                        <h3>塔里克·拉赫曼就任孟加拉国总理</h3>
+                        <p class="summary">塔里克·拉赫曼正式就任孟加拉国总理，结束了在2024年8月谢赫·哈西娜政府倒台后持续18个月的临时政府。这是孟加拉国政治史上的重要转折点，拉赫曼承诺推动经济发展和民主改革。国际社会呼吁新政府维护人权记录并确保选举自由。</p>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <!-- 国际财经 -->
+        <section class="news-section">
+            <h2 class="section-title">
+                <span class="icon">📈</span>
+                国际财经
+            </h2>
+            <div class="news-list">
+                <article class="news-item">
+                    <a href="https://www.litefinance.org/blog/analysts-opinions/gold-price-prediction-forecast/daily-and-weekly/" target="_blank">
+                        <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1610375461246-83df859d849d?w=800&h=500&fit=crop')"></div>
+                        <span class="news-category">LiteFinance · 今天</span>
+                        <h3>黄金价格回落 市场等待FOMC会议纪要</h3>
+                        <p class="summary">现货黄金价格今日下跌至$4,931.99/盎司，市场分析师指出看跌压力增加。4小时图显示上升楔形形态可能推动价格进一步下行至$4,760水平。本周三将公布美联储FOMC会议纪要，投资者密切关注关于未来降息路径的线索。2025年全球黄金需求达到5,002吨，创历史新高。</p>
+                    </a>
+                </article>
+                <article class="news-item">
+                    <a href="https://www.investopedia.com/stock-market-today-s-and-p-500-dow-jones-02172026-11907626" target="_blank">
+                        <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=500&fit=crop')"></div>
+                        <span class="news-category">Investopedia · 今天</span>
+                        <h3>美股震荡收高 通胀和GDP数据发布前</h3>
+                        <p class="summary">主要股指在震荡交易中小幅收高，开始了包含通胀和GDP数据的一周。标准普尔500指数和道琼斯工业平均指数摆脱了早期损失，最终勉强实现小幅上涨。分析师预计本周将公布的关键经济数据将为货币政策走向提供更多指引。</p>
+                    </a>
+                </article>
+                <article class="news-item">
+                    <a href="https://alanchand.com/en/exchange-rates/usd-jpy" target="_blank">
+                        <span class="news-category">AlanChand · 今天</span>
+                        <h3>美元兑日元汇率维持在153水平</h3>
+                        <p class="summary">美元兑日元汇率今日为1美元兑换153日元，维持在近期高位。日本央行继续维持宽松货币政策，而美联储的利率决策成为影响美元走势的关键因素。分析师预计，在本周FOMC会议纪要公布前，汇率将保持区间波动。</p>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <!-- 国际军事 -->
+        <section class="news-section">
+            <h2 class="section-title">
+                <span class="icon">🛡️</span>
+                国际军事
+            </h2>
+            <div class="news-list">
+                <article class="news-item">
+                    <a href="https://english.mathrubhumi.com/news/india/india-france-special-strategic-partnership-modi-macron-lwik8unw" target="_blank">
+                        <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=800&h=500&fit=crop')"></div>
+                        <span class="news-category">Mathrubhumi · 今天</span>
+                        <h3>印法国防合作升级 加强军售和技术转移</h3>
+                        <p class="summary">作为特殊全球战略伙伴关系的一部分，印度和法国承诺加强国防合作。法国将向印度提供更先进的军事技术，包括新一代战斗机技术转让和深海潜艇合作。两國还将在印度洋地区开展联合海军巡逻，提升海上安全合作。</p>
+                    </a>
+                </article>
+                <article class="news-item">
+                    <a href="https://english.mathrubhumi.com/news/india/iran-chemicals-smuggling-gujarat-coast" target="_blank">
+                        <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1555970483-7a6876d96c57?w=800&h=500&fit=crop')"></div>
+                        <span class="news-category">Mathrubhumi · 今天</span>
+                        <h3>印度海岸警卫队截获伊朗籍走私船</h3>
+                        <p class="summary">印度航空事故调查局(AAIB)正在寻求专家帮助，以获取上个月在巴特拉蒂坠毁的Learjet 45飞机驾驶舱录音记录。同时，印度反恐小组与海岸警卫队在古吉拉特邦海岸附近逮捕了两名伊朗籍嫌疑人，他们试图用快艇从伊朗走私超过200公斤的疑似化学物质。</p>
+                    </a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 新闻简报 · 每日更新</p>
+    </footer>
+
+    <script>
+        // 设置日期选择器
+        const today = new Date();
+        const dateInput = document.getElementById('datePicker');
+        dateInput.value = today.toISOString().split('T')[0];
+        dateInput.max = today.toISOString().split('T')[0];
+        
+        // 显示当前日期
+        const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
+        document.getElementById('currentDate').textContent = today.toLocaleDateString('zh-CN', options);
+        
+        // 日期选择变化时跳转到历史页面
+        dateInput.addEventListener('change', function() {
+            const selectedDate = this.value;
+            if (selectedDate && selectedDate !== today.toISOString().split('T')[0]) {
+                window.location.href = selectedDate + '.html';
+            }
+        });
+    </script>
+</body>
+</html>
