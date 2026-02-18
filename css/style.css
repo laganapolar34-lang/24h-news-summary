@@ -188,10 +188,10 @@ main {
 .news-card .summary {
     font-size: 14px;
     color: var(--text-secondary);
-    line-height: 1.5;
+    line-height: 1.6;
     margin-bottom: 10px;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -270,6 +270,7 @@ footer {
     
     .news-card .summary {
         font-size: 13px;
+        -webkit-line-clamp: 5;
     }
     
     main {
