@@ -154,10 +154,12 @@
         const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
         document.getElementById('currentDate').textContent = today.toLocaleDateString('zh-CN', options);
         
-        // 日期选择变化时提示
+        // 日期选择变化时跳转到历史页面
         dateInput.addEventListener('change', function() {
-            alert('历史数据功能开发中，敬请期待！');
-            this.value = today.toISOString().split('T')[0];
+            const selectedDate = this.value;
+            if (selectedDate && selectedDate !== today.toISOString().split('T')[0]) {
+                window.location.href = selectedDate + '.html';
+            }
         });
     </script>
 </body>
