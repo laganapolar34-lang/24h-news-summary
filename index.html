@@ -3,74 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>24小时新闻摘要</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <title>新闻简报</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>📰 24小时新闻摘要</h1>
-            <div class="header-controls">
-                <input type="date" id="datePicker">
-                <button onclick="loadNews()">查询</button>
-                <button onclick="refreshNews()" class="refresh-btn">🔄 刷新</button>
-            </div>
+        <div class="header-content">
+            <h1>新闻简报</h1>
+            <p class="date" id="currentDate"></p>
         </div>
     </header>
 
-    <main class="container">
-        <!-- 黄金价格看板 -->
-        <section class="gold-panel">
-            <h2>🥇 黄金价格</h2>
-            <div class="gold-cards" id="goldPrices">
+    <main>
+        <!-- 黄金价格 -->
+        <section class="gold-section">
+            <h2 class="section-title">黄金价格</h2>
+            <div class="gold-grid">
                 <div class="gold-card">
-                    <div class="gold-name">纽约金 (USD/oz)</div>
-                    <div class="gold-price" id="nyPrice">--</div>
+                    <span class="gold-label">纽约金 (USD/盎司)</span>
+                    <span class="gold-price">$2,035.50</span>
                 </div>
                 <div class="gold-card">
-                    <div class="gold-name">伦敦金 (USD/oz)</div>
-                    <div class="gold-price" id="ldPrice">--</div>
+                    <span class="gold-label">伦敦金 (USD/盎司)</span>
+                    <span class="gold-price">$2,032.80</span>
                 </div>
                 <div class="gold-card highlight">
-                    <div class="gold-name">人民币/克 (纽约)</div>
-                    <div class="gold-price" id="nyCnyPrice">--</div>
+                    <span class="gold-label">人民币/克 (纽约)</span>
+                    <span class="gold-price">¥474.46</span>
                 </div>
                 <div class="gold-card highlight">
-                    <div class="gold-name">人民币/克 (伦敦)</div>
-                    <div class="gold-price" id="ldCnyPrice">--</div>
+                    <span class="gold-label">人民币/克 (伦敦)</span>
+                    <span class="gold-price">¥473.83</span>
                 </div>
             </div>
-            <div class="gold-update-time" id="goldUpdateTime"></div>
         </section>
 
-        <!-- 新闻分类 -->
+        <!-- 政治新闻 -->
         <section class="news-section">
-            <div class="category-tabs">
-                <button class="tab active" data-category="all" onclick="filterCategory('all')">全部</button>
-                <button class="tab" data-category="politics" onclick="filterCategory('politics')">�Politics 政治</button>
-                <button class="tab" data-category="finance" onclick="filterCategory('finance')">💰 财经</button>
-                <button class="tab" data-category="military" onclick="filterCategory('military')">🎖️ 军事</button>
-            </div>
-
-            <div class="news-list" id="newsList">
-                <div class="loading">加载中...</div>
+            <h2 class="section-title">
+                <span class="icon">🎯</span>
+                政治
+            </h2>
+            <div class="news-grid">
+                <article class="news-card">
+                    <a href="http://www.xinhuanet.com/politics/" target="_blank">
+                        <h3>习近平主持召开中央全面深化改革委员会会议</h3>
+                        <p class="summary">会议审议通过了多项重要改革方案，强调要坚持以人民为中心的发展思想...</p>
+                        <div class="meta">
+                            <span class="source">新华网</span>
+                            <span class="time">今天</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="http://www.people.com.cn/" target="_blank">
+                        <h3>十四届全国人大二次会议在京闭幕</h3>
+                        <p class="summary">会议圆满完成各项议程，为今年经济社会发展指明方向...</p>
+                        <div class="meta">
+                            <span class="source">人民网</span>
+                            <span class="time">今天</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="https://www.mfa.gov.cn/" target="_blank">
+                        <h3>外交部就当前国际热点问题举行新闻发布会</h3>
+                        <p class="summary">发言人就中美关系、中俄关系等热点问题回答记者提问...</p>
+                        <div class="meta">
+                            <span class="source">外交部网站</span>
+                            <span class="time">今天</span>
+                        </div>
+                    </a>
+                </article>
             </div>
         </section>
 
-        <!-- 历史日期选择 -->
-        <section class="history-section">
-            <h3>📅 历史新闻</h3>
-            <div class="history-dates" id="historyDates"></div>
+        <!-- 财经新闻 -->
+        <section class="news-section">
+            <h2 class="section-title">
+                <span class="icon">💰</span>
+                财经
+            </h2>
+            <div class="news-grid">
+                <article class="news-card">
+                    <a href="http://www.financialnews.com.cn/" target="_blank">
+                        <h3>央行：保持流动性合理充裕</h3>
+                        <p class="summary">中国人民银行发布公告，将继续实施稳健的货币政策...</p>
+                        <div class="meta">
+                            <span class="source">中国金融新闻网</span>
+                            <span class="time">今天</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="http://www.stcn.com/" target="_blank">
+                        <h3>A股三大指数今日走势分化</h3>
+                        <p class="summary">沪指微涨，深成指和创业板指小幅下跌，市场成交额突破万亿元...</p>
+                        <div class="meta">
+                            <span class="source">证券时报</span>
+                            <span class="time">今天</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="http://www.stats.gov.cn/" target="_blank">
+                        <h3>统计局发布1-2月经济运行数据</h3>
+                        <p class="summary">国民经济起步平稳，稳中有升，高质量发展取得新成效...</p>
+                        <div class="meta">
+                            <span class="source">国家统计局</span>
+                            <span class="time">今天</span>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <!-- 军事新闻 -->
+        <section class="news-section">
+            <h2 class="section-title">
+                <span class="icon">🛡️</span>
+                军事
+            </h2>
+            <div class="news-grid">
+                <article class="news-card">
+                    <a href="http://www.mod.gov.cn/" target="_blank">
+                        <h3>国防部：坚决维护国家主权和领土完整</h3>
+                        <p class="summary">发言人就台海局势、南海问题等发表谈话，强调中国军队有信心有能力...</p>
+                        <div class="meta">
+                            <span class="source">国防部网站</span>
+                            <span class="time">今天</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="http://www.81.cn/" target="_blank">
+                        <h3>海军新型驱逐舰完成海试</h3>
+                        <p class="summary">国产新一代导弹驱逐舰顺利完成各项海试项目，即将入列...</p>
+                        <div class="meta">
+                            <span class="source">解放军报</span>
+                            <span class="time">今天</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="news-card">
+                    <a href="http://www.81.cn/" target="_blank">
+                        <h3>空军举行体系化对抗演练</h3>
+                        <p class="summary">空军多型战机在某海域开展体系化对抗演练，提升实战能力...</p>
+                        <div class="meta">
+                            <span class="source">中国军网</span>
+                            <span class="time">今天</span>
+                        </div>
+                    </a>
+                </article>
+            </div>
         </section>
     </main>
 
     <footer>
-        <div class="container">
-            <p>数据更新时间: <span id="updateTime">--</span></p>
-            <p>© 2024 24小时新闻摘要</p>
-        </div>
+        <p>© 2026 新闻简报 · 每日更新</p>
     </footer>
 
-    <script src="/js/app.js"></script>
+    <script>
+        // 显示当前日期
+        const now = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
+        document.getElementById('currentDate').textContent = now.toLocaleDateString('zh-CN', options);
+    </script>
 </body>
 </html>
