@@ -107,7 +107,7 @@ main {
 
 .gold-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 12px;
 }
 
@@ -257,7 +257,7 @@ footer {
     }
     
     .gold-price {
-        font-size: 16px;
+        font-size: 14px;
     }
     
     .gold-change {
