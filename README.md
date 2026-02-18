@@ -162,9 +162,13 @@ python3 -m http.server 8000
 
 **Q: 如何手动触发更新？**
 A: 运行 `cron action=run id=20281793-6549-4f46-953f-9f9534179368`
+   或 `cron action=list` 查找"每日新闻页面更新"
 
 **Q: 如何查看历史任务？**
 A: 运行 `cron action=runs id=20281793-6549-4f46-953f-9f9534179368`
+
+**Q: Cron ID 变了怎么办？**
+A: 运行 `cron action=list` 查看所有任务，找到"每日新闻页面更新"对应的 ID
 
 **Q: 网页显示异常怎么办？**
 A: 检查 GitHub 仓库是否有最新提交，或在 Netlify 查看构建日志
