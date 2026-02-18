@@ -14,7 +14,7 @@
                 <h1>新闻简报</h1>
                 <p class="date" id="currentDate">2026年2月17日 星期二</p>
             </div>
-            <a href="2026-02-18.html" id="nextDay" class="nav-btn">后一天 →</a>
+            <a href="index.html" id="nextDay" class="nav-btn">后一天 →</a>
         </div>
         <div class="date-selector">
             <input type="date" id="datePicker" value="2026-02-17" max="2026-02-18">
@@ -193,12 +193,10 @@
             window.location.href = prevDate.toISOString().split('T')[0] + '.html';
         });
         
-        // 后一天按钮点击
+        // 后一天按钮点击 - 跳转到首页（最新）
         nextBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            const nextDate = new Date(pageDate);
-            nextDate.setDate(nextDate.getDate() + 1);
-            window.location.href = nextDate.toISOString().split('T')[0] + '.html';
+            window.location.href = 'index.html';
         });
     </script>
 </body>
