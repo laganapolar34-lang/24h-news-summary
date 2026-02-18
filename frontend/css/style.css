@@ -1,0 +1,321 @@
+/* 24小时新闻摘要 - 样式 */
+
+:root {
+    --primary-color: #1a73e8;
+    --secondary-color: #f1f3f4;
+    --text-color: #202124;
+    --text-secondary: #5f6368;
+    --border-color: #dadce0;
+    --gold-color: #f9a825;
+    --politics-color: #e91e63;
+    --finance-color: #4caf50;
+    --military-color: #2196f3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.header-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.header-controls input {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.header-controls button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background: white;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.header-controls button:hover {
+    background: #f1f3f4;
+}
+
+.refresh-btn {
+    background: #4caf50 !important;
+    color: white !important;
+}
+
+/* Gold Panel */
+.gold-panel {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin: 24px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.gold-panel h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.gold-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.gold-card {
+    background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+.gold-card.highlight {
+    background: linear-gradient(135deg, #ffd54f 0%, #ffb300 100%);
+}
+
+.gold-name {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.gold-price {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.gold-update-time {
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-align: right;
+}
+
+/* News Section */
+.news-section {
+    margin: 24px 0;
+}
+
+.category-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.tab {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: white;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.tab:hover {
+    background: var(--secondary-color);
+}
+
+.tab.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.tab[data-category="politics"].active {
+    background: var(--politics-color);
+}
+
+.tab[data-category="finance"].active {
+    background: var(--finance-color);
+}
+
+.tab[data-category="military"].active {
+    background: var(--military-color);
+}
+
+/* News List */
+.news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.news-item {
+    background: white;
+    border-radius: 8px;
+    padding: 16px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.news-item:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    transform: translateY(-2px);
+}
+
+.news-item .category {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.news-item .category.politics {
+    background: var(--politics-color);
+}
+
+.news-item .category.finance {
+    background: var(--finance-color);
+}
+
+.news-item .category.military {
+    background: var(--military-color);
+}
+
+.news-item h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.news-item .summary {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.news-item .meta {
+    font-size: 12px;
+    color: var(--text-secondary);
+    display: flex;
+    gap: 16px;
+}
+
+.news-item .meta a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.news-item .meta a:hover {
+    text-decoration: underline;
+}
+
+/* History Section */
+.history-section {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin: 24px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.history-section h3 {
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+.history-dates {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.history-date {
+    padding: 8px 16px;
+    background: var(--secondary-color);
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.history-date:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Loading & Error */
+.loading, .error, .empty {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-secondary);
+}
+
+.error {
+    color: #f44336;
+}
+
+/* Footer */
+footer {
+    background: white;
+    padding: 20px 0;
+    margin-top: 40px;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .gold-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .category-tabs {
+        justify-content: center;
+    }
+}
