@@ -8,9 +8,13 @@
 </head>
 <body>
     <header>
-        <div class="header-content">
-            <h1>新闻简报</h1>
-            <p class="date" id="currentDate">2026年2月16日 星期一</p>
+        <div class="header-nav">
+            <a href="2026-02-15.html" id="prevDay" class="nav-btn">← 前一天</a>
+            <div class="header-content">
+                <h1>新闻简报</h1>
+                <p class="date" id="currentDate">2026年2月16日 星期一</p>
+            </div>
+            <a href="2026-02-17.html" id="nextDay" class="nav-btn">后一天 →</a>
         </div>
         <div class="date-selector">
             <input type="date" id="datePicker" value="2026-02-16" max="2026-02-18">
@@ -144,22 +148,57 @@
     </footer>
 
     <script>
-        // 设置日期选择器
-        const today = new Date();
-        const dateInput = document.getElementById('datePicker');
-        dateInput.value = today.toISOString().split('T')[0];
-        dateInput.max = today.toISOString().split('T')[0];
+        // 获取当前页面日期
+        function getPageDate() {
+            const path = window.location.pathname;
+            const match = path.match(/(\d{4}-\d{2}-\d{2})\.html/);
+            if (match) {
+                return new Date(match[1]);
+            }
+            return new Date();
+        }
         
-        // 显示当前日期
-        const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
-        document.getElementById('currentDate').textContent = today.toLocaleDateString('zh-CN', options);
+        const pageDate = getPageDate();
+        const today = new Date();
+        
+        // 设置日期选择器
+        const dateInput = document.getElementById('datePicker');
+        dateInput.value = pageDate.toISOString().split('T')[0];
+        dateInput.max = today.toISOString().split('T')[0];
         
         // 日期选择变化时跳转到历史页面
         dateInput.addEventListener('change', function() {
             const selectedDate = this.value;
-            if (selectedDate && selectedDate !== today.toISOString().split('T')[0]) {
+            const currentDateStr = pageDate.toISOString().split('T')[0];
+            if (selectedDate && selectedDate !== currentDateStr) {
                 window.location.href = selectedDate + '.html';
             }
+        });
+        
+        // 前一天/后一天按钮
+        const prevBtn = document.getElementById('prevDay');
+        const nextBtn = document.getElementById('nextDay');
+        
+        // 后一天按钮：如果是今天则禁用
+        if (pageDate.toISOString().split('T')[0] >= today.toISOString().split('T')[0]) {
+            nextBtn.style.opacity = '0.3';
+            nextBtn.style.pointerEvents = 'none';
+        }
+        
+        // 前一天按钮点击
+        prevBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const prevDate = new Date(pageDate);
+            prevDate.setDate(prevDate.getDate() - 1);
+            window.location.href = prevDate.toISOString().split('T')[0] + '.html';
+        });
+        
+        // 后一天按钮点击
+        nextBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const nextDate = new Date(pageDate);
+            nextDate.setDate(nextDate.getDate() + 1);
+            window.location.href = nextDate.toISOString().split('T')[0] + '.html';
         });
     </script>
 </body>
