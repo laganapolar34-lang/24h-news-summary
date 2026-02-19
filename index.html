@@ -3,45 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>新闻简报</title>
+    <title>新闻简报 - 每日国际要闻</title>
+    <meta name="description" content="每日更新的国际新闻简报，包含政治、财经、军事要闻及黄金价格、汇率信息">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        /* 额外美化样式 */
-        .header {
-            background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
-        }
-        .nav-btn {
-            background: #f5f5f7;
-            border-radius: 20px;
-            padding: 10px 18px;
-            font-weight: 500;
-        }
-        .nav-btn:hover {
-            background: #e8e8ed;
-        }
-        .date-selector input {
-            border-radius: 12px;
-            border: 1px solid #d2d2d7;
-            font-size: 16px;
-        }
-        .gold-card {
-            border-radius: 16px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-        }
-        .news-item {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .news-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-        }
-    </style>
 </head>
 <body>
-    <header class="header">
+    <!-- Header -->
+    <header>
         <div class="header-nav">
             <a href="#" id="prevDay" class="nav-btn">← 前一天</a>
             <div class="header-content">
@@ -55,10 +23,11 @@
         </div>
     </header>
 
+    <!-- Main Content -->
     <main>
         <!-- 黄金价格 + 汇率 -->
         <section class="gold-section">
-            <h2 class="section-title">黄金价格 · 汇率</h2>
+            <h2 class="section-title">🥇 黄金价格 · 💱 汇率</h2>
             <div class="gold-grid">
                 <div class="gold-card">
                     <span class="gold-label">纽约现货 (USD/oz)</span>
@@ -91,27 +60,33 @@
             </h2>
             <div class="news-list">
                 <article class="news-item">
-                    <a href="https://www.bbc.com/news/world-us-canada-68445789" target="_blank">
+                    <a href="https://www.bbc.com/news/world-us-canada-68445789" target="_blank" rel="noopener">
                         <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=500&fit=crop')"></div>
-                        <span class="news-category">BBC · 今天</span>
-                        <h3>特朗普就查戈斯群岛问题向英国发出警告</h3>
-                        <p class="summary">美国总统特朗普警告英国不要将迪戈加西亚岛交给毛里求斯，这是对英美两国达成的查戈斯群岛协议的最新攻击。</p>
+                        <div class="news-content">
+                            <span class="news-category">BBC · 今天</span>
+                            <h3>特朗普就查戈斯群岛问题向英国发出警告</h3>
+                            <p class="summary">美国总统特朗普警告英国不要将迪戈加西亚岛交给毛里求斯，这是对英美两国达成的查戈斯群岛协议的最新攻击。</p>
+                        </div>
                     </a>
                 </article>
                 <article class="news-item">
-                    <a href="https://www.bbc.com/news/world-europe-68442312" target="_blank">
+                    <a href="https://www.bbc.com/news/world-europe-68442312" target="_blank" rel="noopener">
                         <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&h=500&fit=crop')"></div>
-                        <span class="news-category">BBC · 今天</span>
-                        <h3>俄乌和平谈判"困难"结束 未取得突破</h3>
-                        <p class="summary">乌克兰与俄罗斯之间的第二轮和平谈判在仅持续两小时后结束，未能取得任何突破。</p>
+                        <div class="news-content">
+                            <span class="news-category">BBC · 今天</span>
+                            <h3>俄乌和平谈判"困难"结束 未取得突破</h3>
+                            <p class="summary">乌克兰与俄罗斯之间的第二轮和平谈判在仅持续两小时后结束，未能取得任何突破。</p>
+                        </div>
                     </a>
                 </article>
                 <article class="news-item">
-                    <a href="https://www.bbc.com/news/world-asia-68451290" target="_blank">
+                    <a href="https://www.bbc.com/news/world-asia-68451290" target="_blank" rel="noopener">
                         <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1541872703-74c5963631df?w=800&h=500&fit=crop')"></div>
-                        <span class="news-category">BBC · 今天</span>
-                        <h3>韩国总统尹锡悦弹劾案宣判在即</h3>
-                        <p class="summary">韩国首尔中央地方法院将于近日对总统尹锡悦的弹劾案作出判决。</p>
+                        <div class="news-content">
+                            <span class="news-category">BBC · 今天</span>
+                            <h3>韩国总统尹锡悦弹劾案宣判在即</h3>
+                            <p class="summary">韩国首尔中央地方法院将于近日对总统尹锡悦的弹劾案作出判决。</p>
+                        </div>
                     </a>
                 </article>
             </div>
@@ -125,116 +100,25 @@
             </h2>
             <div class="news-list">
                 <article class="news-item">
-                    <a href="https://www.bbc.com/news/business-68449876" target="_blank">
+                    <a href="https://www.bbc.com/news/business-68449876" target="_blank" rel="noopener">
                         <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=500&fit=crop')"></div>
-                        <span class="news-category">BBC · 今天</span>
-                        <h3>扎克伯格在社交媒体成瘾审判中为Meta辩护</h3>
-                        <p class="summary">Meta首席执行官马克·扎克伯格在美国国会作证，表示"始终"后悔没有更快地识别13岁以下的用户。</p>
+                        <div class="news-content">
+                            <span class="news-category">BBC · 今天</span>
+                            <h3>扎克伯格在社交媒体成瘾审判中为Meta辩护</h3>
+                            <p class="summary">Meta首席执行官马克·扎克伯格在美国国会作证，表示"始终"后悔没有更快地识别13岁以下的用户。</p>
+                        </div>
                     </a>
                 </article>
             </div>
         </section>
     </main>
 
-    <script>
-        // 获取当前页面日期（从URL或默认今天）
-        function getPageDate() {
-            const path = window.location.pathname;
-            const match = path.match(/(\d{4}-\d{2}-\d{2})\.html/);
-            if (match) {
-                return new Date(match[1]);
-            }
-            return new Date();
-        }
-        
-        // 获取今天日期（只取日期部分）
-        function getToday() {
-            const now = new Date();
-            now.setHours(0, 0, 0, 0);
-            return now;
-        }
-        
-        const pageDate = getPageDate();
-        const today = getToday();
-        
-        // 设置日期选择器
-        const dateInput = document.getElementById('datePicker');
-        const dateStr = pageDate.toISOString().split('T')[0];
-        const todayStr = today.toISOString().split('T')[0];
-        
-        dateInput.value = dateStr;
-        dateInput.max = todayStr;
-        
-        // 显示当前日期
-        const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
-        const dateText = pageDate.toLocaleDateString('zh-CN', options);
-        
-        // 设置标题（区分首页和历史页面）
-        if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-            document.getElementById('currentDate').textContent = '今日 · ' + dateText;
-        } else {
-            document.getElementById('currentDate').textContent = dateText;
-        }
-        
-        // 日期选择变化时跳转到历史页面
-        dateInput.addEventListener('change', function() {
-            const selectedDate = this.value;
-            if (selectedDate && selectedDate !== dateStr) {
-                // 如果是今天，跳转到首页
-                if (selectedDate === todayStr) {
-                    window.location.href = 'index.html';
-                } else {
-                    window.location.href = selectedDate + '.html';
-                }
-            }
-        });
-        
-        // 前一天/后一天按钮
-        const prevBtn = document.getElementById('prevDay');
-        const nextBtn = document.getElementById('nextDay');
-        
-        // 后一天按钮：如果是今天则禁用
-        if (dateStr >= todayStr) {
-            nextBtn.style.opacity = '0.3';
-            nextBtn.style.pointerEvents = 'none';
-            nextBtn.href = 'javascript:void(0)';
-        } else {
-            nextBtn.href = '#';
-        }
-        
-        // 前一天按钮
-        prevBtn.href = '#';
-        
-        // 前一天按钮点击
-        prevBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const prevDate = new Date(pageDate);
-            prevDate.setDate(prevDate.getDate() - 1);
-            const prevDateStr = prevDate.toISOString().split('T')[0];
-            
-            // 如果是今天，跳转到首页
-            if (prevDateStr === todayStr) {
-                window.location.href = 'index.html';
-            } else {
-                window.location.href = prevDateStr + '.html';
-            }
-        });
-        
-        // 后一天按钮点击
-        nextBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (dateStr >= todayStr) return;
-            
-            const nextDate = new Date(pageDate);
-            nextDate.setDate(nextDate.getDate() + 1);
-            const nextDateStr = nextDate.toISOString().split('T')[0];
-            
-            if (nextDateStr === todayStr) {
-                window.location.href = 'index.html';
-            } else {
-                window.location.href = nextDateStr + '.html';
-            }
-        });
-    </script>
+    <!-- Footer -->
+    <footer>
+        <p>📰 新闻简报 · 每日更新</p>
+        <p>由 <a href="https://github.com/laganapolar34-lang/24h-news-summary" target="_blank">OpenClaw Agent Team</a> 自动生成</p>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
