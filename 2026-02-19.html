@@ -150,6 +150,8 @@
 
     <script>
         // 获取当前页面日期（从URL或默认今天）
+    <script>
+        // 获取当前页面日期（从URL或默认今天）
         function getPageDate() {
             const path = window.location.pathname;
             const match = path.match(/(\d{4}-\d{2}-\d{2})\.html/);
@@ -159,57 +161,80 @@
             return new Date();
         }
         
-        const pageDate = getPageDate();
-        const today = new Date();
-        
-        // 设置日期选择器
-        const dateInput = document.getElementById('datePicker');
-        dateInput.value = pageDate.toISOString().split('T')[0];
-        dateInput.max = today.toISOString().split('T')[0];
-        
-        // 显示当前日期
-        const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
-        document.getElementById('currentDate').textContent = pageDate.toLocaleDateString('zh-CN', options);
-        
-        // 设置标题（区分首页和历史页面）
-        if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-            document.getElementById('currentDate').textContent = '今日 · ' + today.toLocaleDateString('zh-CN', options);
+        function getToday() {
+            const now = new Date();
+            now.setHours(0, 0, 0, 0);
+            return now;
         }
         
-        // 日期选择变化时跳转到历史页面
+        const pageDate = getPageDate();
+        const today = getToday();
+        
+        const dateInput = document.getElementById('datePicker');
+        const dateStr = pageDate.toISOString().split('T')[0];
+        const todayStr = today.toISOString().split('T')[0];
+        
+        dateInput.value = dateStr;
+        dateInput.max = todayStr;
+        
+        const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
+        const dateText = pageDate.toLocaleDateString('zh-CN', options);
+        
+        if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+            document.getElementById('currentDate').textContent = '今日 · ' + dateText;
+        } else {
+            document.getElementById('currentDate').textContent = dateText;
+        }
+        
         dateInput.addEventListener('change', function() {
             const selectedDate = this.value;
-            const currentDateStr = pageDate.toISOString().split('T')[0];
-            if (selectedDate && selectedDate !== currentDateStr) {
-                window.location.href = selectedDate + '.html';
+            if (selectedDate && selectedDate !== dateStr) {
+                if (selectedDate === todayStr) {
+                    window.location.href = 'index.html';
+                } else {
+                    window.location.href = selectedDate + '.html';
+                }
             }
         });
         
-        // 前一天/后一天按钮
         const prevBtn = document.getElementById('prevDay');
         const nextBtn = document.getElementById('nextDay');
         
-        // 后一天按钮：如果是今天则禁用
-        if (pageDate.toISOString().split('T')[0] >= today.toISOString().split('T')[0]) {
+        if (dateStr >= todayStr) {
             nextBtn.style.opacity = '0.3';
             nextBtn.style.pointerEvents = 'none';
+            nextBtn.href = 'javascript:void(0)';
+        } else {
+            nextBtn.href = '#';
         }
         
-        // 前一天按钮点击
+        prevBtn.href = '#';
+        
         prevBtn.addEventListener('click', function(e) {
             e.preventDefault();
             const prevDate = new Date(pageDate);
             prevDate.setDate(prevDate.getDate() - 1);
-            window.location.href = prevDate.toISOString().split('T')[0] + '.html';
+            const prevDateStr = prevDate.toISOString().split('T')[0];
+            
+            if (prevDateStr === todayStr) {
+                window.location.href = 'index.html';
+            } else {
+                window.location.href = prevDateStr + '.html';
+            }
         });
         
-        // 后一天按钮点击
         nextBtn.addEventListener('click', function(e) {
             e.preventDefault();
+            if (dateStr >= todayStr) return;
+            
             const nextDate = new Date(pageDate);
             nextDate.setDate(nextDate.getDate() + 1);
-            window.location.href = nextDate.toISOString().split('T')[0] + '.html';
+            const nextDateStr = nextDate.toISOString().split('T')[0];
+            
+            if (nextDateStr === todayStr) {
+                window.location.href = 'index.html';
+            } else {
+                window.location.href = nextDateStr + '.html';
+            }
         });
     </script>
-</body>
-</html>

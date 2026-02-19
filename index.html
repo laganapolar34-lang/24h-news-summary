@@ -5,9 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>新闻简报</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 额外美化样式 */
+        .header {
+            background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+        }
+        .nav-btn {
+            background: #f5f5f7;
+            border-radius: 20px;
+            padding: 10px 18px;
+            font-weight: 500;
+        }
+        .nav-btn:hover {
+            background: #e8e8ed;
+        }
+        .date-selector input {
+            border-radius: 12px;
+            border: 1px solid #d2d2d7;
+            font-size: 16px;
+        }
+        .gold-card {
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .news-item {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .news-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+    </style>
 </head>
 <body>
-    <header>
+    <header class="header">
         <div class="header-nav">
             <a href="#" id="prevDay" class="nav-btn">← 前一天</a>
             <div class="header-content">
@@ -17,7 +51,7 @@
             <a href="#" id="nextDay" class="nav-btn">后一天 →</a>
         </div>
         <div class="date-selector">
-            <input type="date" id="datePicker" max="">
+            <input type="date" id="datePicker">
         </div>
     </header>
 
@@ -61,7 +95,7 @@
                         <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=500&fit=crop')"></div>
                         <span class="news-category">BBC · 今天</span>
                         <h3>特朗普就查戈斯群岛问题向英国发出警告</h3>
-                        <p class="summary">美国总统特朗普警告英国不要将迪戈加西亚岛交给毛里求斯，这是对英美两国达成的查戈斯群岛协议的最新攻击。特朗普的言论发布仅在美国正式支持英国协议后一天，引发国际社会对这一领土争议的再次关注。迪戈加西亚岛目前由英国控制，美国设有军事基地。</p>
+                        <p class="summary">美国总统特朗普警告英国不要将迪戈加西亚岛交给毛里求斯，这是对英美两国达成的查戈斯群岛协议的最新攻击。</p>
                     </a>
                 </article>
                 <article class="news-item">
@@ -69,7 +103,7 @@
                         <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&h=500&fit=crop')"></div>
                         <span class="news-category">BBC · 今天</span>
                         <h3>俄乌和平谈判"困难"结束 未取得突破</h3>
-                        <p class="summary">乌克兰与俄罗斯之间的第二轮和平谈判在仅持续两小时后结束，未能取得任何突破。谈判被认为是"困难的"，双方在关键问题上仍存在重大分歧。国际社会呼吁双方继续对话，但目前局势仍不明朗。这场持续多年的冲突已造成大量人员伤亡和人道主义危机。</p>
+                        <p class="summary">乌克兰与俄罗斯之间的第二轮和平谈判在仅持续两小时后结束，未能取得任何突破。</p>
                     </a>
                 </article>
                 <article class="news-item">
@@ -77,7 +111,7 @@
                         <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1541872703-74c5963631df?w=800&h=500&fit=crop')"></div>
                         <span class="news-category">BBC · 今天</span>
                         <h3>韩国总统尹锡悦弹劾案宣判在即</h3>
-                        <p class="summary">韩国首尔中央地方法院将于近日对总统尹锡悦的弹劾案作出判决。尹锡悦因去年12月宣布戒严令而面临弹劾，如果弹劾成立，他将下台并面临刑事审判。这一事件引发了韩国政治动荡，大批民众走上街头要求弹劾或支持总统。</p>
+                        <p class="summary">韩国首尔中央地方法院将于近日对总统尹锡悦的弹劾案作出判决。</p>
                     </a>
                 </article>
             </div>
@@ -94,59 +128,13 @@
                     <a href="https://www.bbc.com/news/business-68449876" target="_blank">
                         <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=500&fit=crop')"></div>
                         <span class="news-category">BBC · 今天</span>
-                        <h3>扎克伯格在里程碑式社交媒体成瘾审判中为Meta辩护</h3>
-                        <p class="summary">Meta首席执行官马克·扎克伯格在美国国会作证，为公司在社交媒体成瘾问题上的角色进行辩护。扎克伯格表示，他"始终"后悔没有更快地识别13岁以下的用户。这场审判被认为是针对社交媒体平台的里程碑式案件，可能对整个行业产生深远影响。</p>
-                    </a>
-                </article>
-                <article class="news-item">
-                    <a href="https://www.bbc.com/news/business-68440123" target="_blank">
-                        <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&h=500&fit=crop')"></div>
-                        <span class="news-category">BBC · 今天</span>
-                        <h3>燃油和机票价格下降帮助抑制通胀</h3>
-                        <p class="summary">英国通胀率持续下降，燃油和机票价格下跌是主要推动因素。经济学家表示，价格涨幅放缓可能导致利率下降。这对普通消费者来说是积极信号，生活成本压力有望进一步缓解。英国央行将继续监测通胀走势以决定货币政策走向。</p>
-                    </a>
-                </article>
-                <article class="news-item">
-                    <a href="https://www.bbc.com/news/business-68435678" target="_blank">
-                        <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=800&h=500&fit=crop')"></div>
-                        <span class="news-category">BBC · 今天</span>
-                        <h3>eBay以12亿美元收购二手服装平台Depop</h3>
-                        <p class="summary">eBay宣布以12亿美元收购二手服装应用程序Depop，这笔交易将帮助eBay在快速增长的转售市场中获得更大份额。Depop以其独特的社交电商模式深受年轻用户喜爱，在美国、英国和欧洲拥有大量用户。这是eBay近年来最大规模的收购之一。</p>
-                    </a>
-                </article>
-            </div>
-        </section>
-
-        <!-- 国际军事 -->
-        <section class="news-section">
-            <h2 class="section-title">
-                <span class="icon">🛡️</span>
-                国际军事
-            </h2>
-            <div class="news-list">
-                <article class="news-item">
-                    <a href="https://www.bbc.com/news/world-us-canada-68452345" target="_blank">
-                        <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=800&h=500&fit=crop')"></div>
-                        <span class="news-category">BBC · 今天</span>
-                        <h3>加州太浩湖地区雪崩 8名滑雪者遇难</h3>
-                        <p class="summary">加州太浩湖地区发生严重雪崩，造成8名滑雪者死亡。15名滑雪者在雪崩中失踪，救援队伍经过搜救找到部分人员，目前仍有1人下落不明且被推定死亡。此次雪崩是近年来美国最致命的户外事故之一，当局提醒民众在雪地活动时注意安全。</p>
-                    </a>
-                </article>
-                <article class="news-item">
-                    <a href="https://www.bbc.com/news/middle-east-68448901" target="_blank">
-                        <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1555970483-7a6876d96c57?w=800&h=500&fit=crop')"></div>
-                        <span class="news-category">BBC · 今天</span>
-                        <h3>伊朗安全官员在墓地枪击人群</h3>
-                        <p class="summary">伊朗一名安全官员似乎在墓地枪击人群，事发时人们聚集在一起纪念在政府残酷镇压抗议活动期间遇害的人员。国际社会对伊朗的人权状况表示严重关切，呼吁进行独立调查。这一事件再次凸显了伊朗持续的紧张局势。</p>
+                        <h3>扎克伯格在社交媒体成瘾审判中为Meta辩护</h3>
+                        <p class="summary">Meta首席执行官马克·扎克伯格在美国国会作证，表示"始终"后悔没有更快地识别13岁以下的用户。</p>
                     </a>
                 </article>
             </div>
         </section>
     </main>
-
-    <footer>
-        <p>© 2026 新闻简报 · 每日更新</p>
-    </footer>
 
     <script>
         // 获取当前页面日期（从URL或默认今天）
@@ -159,29 +147,45 @@
             return new Date();
         }
         
+        // 获取今天日期（只取日期部分）
+        function getToday() {
+            const now = new Date();
+            now.setHours(0, 0, 0, 0);
+            return now;
+        }
+        
         const pageDate = getPageDate();
-        const today = new Date();
+        const today = getToday();
         
         // 设置日期选择器
         const dateInput = document.getElementById('datePicker');
-        dateInput.value = pageDate.toISOString().split('T')[0];
-        dateInput.max = today.toISOString().split('T')[0];
+        const dateStr = pageDate.toISOString().split('T')[0];
+        const todayStr = today.toISOString().split('T')[0];
+        
+        dateInput.value = dateStr;
+        dateInput.max = todayStr;
         
         // 显示当前日期
         const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
-        document.getElementById('currentDate').textContent = pageDate.toLocaleDateString('zh-CN', options);
+        const dateText = pageDate.toLocaleDateString('zh-CN', options);
         
         // 设置标题（区分首页和历史页面）
         if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-            document.getElementById('currentDate').textContent = '今日 · ' + today.toLocaleDateString('zh-CN', options);
+            document.getElementById('currentDate').textContent = '今日 · ' + dateText;
+        } else {
+            document.getElementById('currentDate').textContent = dateText;
         }
         
         // 日期选择变化时跳转到历史页面
         dateInput.addEventListener('change', function() {
             const selectedDate = this.value;
-            const currentDateStr = pageDate.toISOString().split('T')[0];
-            if (selectedDate && selectedDate !== currentDateStr) {
-                window.location.href = selectedDate + '.html';
+            if (selectedDate && selectedDate !== dateStr) {
+                // 如果是今天，跳转到首页
+                if (selectedDate === todayStr) {
+                    window.location.href = 'index.html';
+                } else {
+                    window.location.href = selectedDate + '.html';
+                }
             }
         });
         
@@ -190,25 +194,46 @@
         const nextBtn = document.getElementById('nextDay');
         
         // 后一天按钮：如果是今天则禁用
-        if (pageDate.toISOString().split('T')[0] >= today.toISOString().split('T')[0]) {
+        if (dateStr >= todayStr) {
             nextBtn.style.opacity = '0.3';
             nextBtn.style.pointerEvents = 'none';
+            nextBtn.href = 'javascript:void(0)';
+        } else {
+            nextBtn.href = '#';
         }
+        
+        // 前一天按钮
+        prevBtn.href = '#';
         
         // 前一天按钮点击
         prevBtn.addEventListener('click', function(e) {
             e.preventDefault();
             const prevDate = new Date(pageDate);
             prevDate.setDate(prevDate.getDate() - 1);
-            window.location.href = prevDate.toISOString().split('T')[0] + '.html';
+            const prevDateStr = prevDate.toISOString().split('T')[0];
+            
+            // 如果是今天，跳转到首页
+            if (prevDateStr === todayStr) {
+                window.location.href = 'index.html';
+            } else {
+                window.location.href = prevDateStr + '.html';
+            }
         });
         
         // 后一天按钮点击
         nextBtn.addEventListener('click', function(e) {
             e.preventDefault();
+            if (dateStr >= todayStr) return;
+            
             const nextDate = new Date(pageDate);
             nextDate.setDate(nextDate.getDate() + 1);
-            window.location.href = nextDate.toISOString().split('T')[0] + '.html';
+            const nextDateStr = nextDate.toISOString().split('T')[0];
+            
+            if (nextDateStr === todayStr) {
+                window.location.href = 'index.html';
+            } else {
+                window.location.href = nextDateStr + '.html';
+            }
         });
     </script>
 </body>
