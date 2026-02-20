@@ -19,6 +19,31 @@
 └── README.md          # 本文件
 ```
 
+## 🛡️ 安全与性能优化
+
+### Link Security（链接安全）
+所有外部链接均添加 `rel="noopener noreferrer"` 属性，防止打开的页面访问原页面的 window 对象，避免潜在的安全风险。
+
+```html
+<a href="https://example.com" target="_blank" rel="noopener noreferrer">
+```
+
+### Lazy Loading（懒加载）
+新闻文章使用 `loading="lazy"` 属性，延迟加载非关键资源，提升页面初始加载性能。
+
+```html
+<article class="news-item" loading="lazy">
+```
+
+### Accessibility（无障碍访问）
+日期选择器添加 `aria-label` 属性，支持屏幕阅读器用户。
+
+```html
+<input type="date" id="datePicker" aria-label="选择日期">
+```
+
+---
+
 ## 🎨 设计风格
 
 - Apple Newsroom 风格：简洁、白色背景、大字体
